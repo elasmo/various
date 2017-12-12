@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 import requests
 import sys
-from string import ascii_letters
+#from string import ascii_letters
+
+# Ascii letters ordered by the most common letter first
+ascii_letters = "etaoinshrdlcumwfgypbvkjxqz"
 
 url   = "http://foo/bar.php"
 token = "session12345"
