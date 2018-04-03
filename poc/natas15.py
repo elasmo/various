@@ -22,6 +22,5 @@ def guess(s):
 
     return s
 
-
 for char in alphanumeric:
     guess(char)
