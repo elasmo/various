@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import requests
-import sys
 from string import ascii_letters
 from string import digits
 
+alphanumeric = ascii_letters + digits
 url = "http://natas15.natas.labs.overthewire.org:80/index.php"
 headers = { 
     "User-Agent": "Mozilla/5.0", 
@@ -17,11 +17,11 @@ def guess(s):
     
     if "This user doesn't exist." not in resp.text:
         print(s)
-        for char in ascii_letters+digits:
+        for char in alphanumeric:
             guess(s + char)
 
     return s
 
 
-for char in ascii_letters+digits:
+for char in alphanumeric:
     guess(char)
