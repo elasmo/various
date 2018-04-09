@@ -6,7 +6,10 @@ bypass this filter.
 
 Example:
 ```php
-php -r 'print(str_replace("../", "", "....//") . "\n");'
+$ php -r 'print(str_replace("../", "", "....//") . "\n");'
+../
+$
+
 ```
 
 2) The log function includes the ```User-Agent``` parameter without any 
