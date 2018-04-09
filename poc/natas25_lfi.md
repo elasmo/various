@@ -1,7 +1,7 @@
 # LFI PoC
 
 ## Description
-1) ```str_replace()``` is not recursively called, whick makes it possible to
+1) ```str_replace()``` is not recursively called, which makes it possible to
 bypass this filter.
 
 Example:
