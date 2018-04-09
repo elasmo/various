@@ -20,5 +20,5 @@ data = {
 }
 
 while True:
-    resp = requests.post(url, headers=headers, data=data, auth=('natas19', '4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs'))
+    resp = requests.post(url, headers=headers, data=data, auth=('natas19', '4I[...]Ys'))
     print(binascii.unhexlify(resp.cookies['PHPSESSID']))

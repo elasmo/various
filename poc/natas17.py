@@ -10,7 +10,7 @@ url = "http://natas17.natas.labs.overthewire.org/index.php?debug"
 alphanumeric = ascii_letters + digits
 headers = {
     "User-Agent": "Mozilla/5.0",
-    "Authorization": "Basic bmF0YXMxNzo4UHMzSDBHV2JuNXJkOVM3R21BZGdRTmRraFBrcTljdw=="
+    "Authorization": "Basic bm[...]dw=="
 }
 
 def guess(s):
