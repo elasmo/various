@@ -1,14 +1,17 @@
 # LFI PoC
 
 ## Description
-1. The ```str_replace()``` filter is easily bypassed:
+1) ```str_replace()``` is not recursively called, whick makes it possible to
+bypass this filter.
 
 Example:
 ```php
 php -r 'print(str_replace("../", "", "....//") . "\n");'
 ```
 
-2. The log function includes the User-Agent without any validation.
+2) The log function includes the ```User-Agent``` parameter without any 
+validation, which makes it possible to include arbitrary PHP code using the
+LFI vulnerability.
 
 ## Request
 ```
