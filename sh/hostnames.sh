@@ -109,3 +109,13 @@ rammelsbergite xanthoconite clinochlore kyanite raspite zincite clinohumite
 labradorite realgar zircon clinozoisite laumontite rheniite zoisite cobaltite 
 acerila corpar katoite
 EOM
+
+rand_name () {
+    local _choices=$*
+    local _max=$(echo $_choices | wc -w)
+
+    echo $_choices | cut -f $(shuf -i 1-$_max -n 1) -d ' '
+}
+
+rand_name $MINERALS
+rand_name $FISHES
